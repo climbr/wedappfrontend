@@ -1,0 +1,17 @@
+* {
+  border-radius: 0 !important;
+}
+
+.center {
+	text-align: center;
+}
+
+.green {
+	background-color: #019600;
+	color: #ffffff;
+}
+
+.red {
+	background-color: #E07856;
+	color: #ffffff;
+}
