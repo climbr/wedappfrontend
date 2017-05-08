@@ -1,17 +1,50 @@
-* {
-  border-radius: 0 !important;
-}
-
 .center {
 	text-align: center;
 }
 
+/* some colors https://coolors.co/0a2463-fb3640-605f5e-247ba0-e2e2e2 */
+
 .green {
-	background-color: #019600;
+	background-color: #04E762;
 	color: #ffffff;
 }
 
-.red {
-	background-color: #E07856;
+.grayblue {
+	background-color: #1E555C;
+	color: #ffffff;
+}
+
+.teal {
+	background-color: #00BDFF;
+	color: #ffffff;
+}
+
+.darkblue {
+	background-color: #0A2463;
+	color: #ffffff;
+}
+
+.lightblue {
+	background-color: #247BA0;
+	color: #ffffff;
+}
+
+.coral {
+	background-color: #FB3640;
+	color: #ffffff;
+}
+
+.orange {
+	background-color: #EF4723;
+	color: #ffffff;
+}
+
+.silver {
+	background-color: #E2E2E2;
+	color: #ffffff;
+}
+
+.gray {
+	background-color: #605F5E;
 	color: #ffffff;
 }
