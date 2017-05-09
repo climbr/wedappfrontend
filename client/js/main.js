@@ -1,6 +1,6 @@
 function main(){
     $('#yes').on('click', function(){
-        $('#question').text("answered");
+        loadDoc();
         createBoxYes();
         $('.close').on('click', function(){
             deleteBox(this);
@@ -8,7 +8,7 @@ function main(){
     });
     
     $('#no').on('click', function(){
-        $('#question').text("answered");
+        loadDoc();
         createBoxNo();
         $('.close').on('click', function(){
             deleteBox(this);
@@ -18,6 +18,7 @@ function main(){
     $('.close').on('click', function(){
        deleteBox(this);
     });
+    
 }
 
 function createBoxYes() {
@@ -32,6 +33,17 @@ function createBoxNo() {
 
  function deleteBox(x) {
   $(x).parent().remove();
+}
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("question").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "test.txt", true);
+  xhttp.send();
 }
 
 
