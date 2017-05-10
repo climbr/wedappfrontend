@@ -1,4 +1,11 @@
+// create a variable that will be incremented (later) as the user answers more questions
+
 var i = 0;
+
+// create a variable that is a javascript object, currently local 
+// but will be a link to an external doc eventually
+
+// var json = link(js/questions.json);
 
 var json = [
    {
@@ -26,6 +33,8 @@ var json = [
         "question":"All Done!"
     }
 ];
+
+//create the main js function which will listen for clicks to update questions and place them in the right place
 
 function main(){
     updateQuestion(i);
@@ -55,23 +64,30 @@ function main(){
     
 }
 
+// if the yes box is clicked (in main) create a new box in the yes column with the original question
+
 function createBoxYes(i) {
     var box = '<div class="panel lightblue"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button><div class="panel-heading">' + json[i].title + '</div> <div class="panel-body text-center"> <p>' + json[i].question + '</p> </div></div>';
     $("#yesColumn").append(box);// Insert new elements after img
 }
+
+//if the no box is clicked (in main) create a new box in the no column with the original question
 
 function createBoxNo(i) {
     var box = '<div class="panel coral"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button><div class="panel-heading">' + json[i].title + '</div> <div class="panel-body text-center"> <p>' + json[i].question + '</p> </div></div>';
     $("#noColumn").append(box);      // Insert new elements after img
 }
 
+//show the i-th 
+
 function updateQuestion(i) {
     var currentTitle = json[i].title;
     var currentQuestion = json[i].question;
-    document.getElementById("title").innerHTML = json[i].title;
+    document.getElementById("title").innerHTML = currentTitle;
     document.getElementById("question").innerHTML = currentQuestion;
 }
 
+//when the x is clicked, move the box to the alternate column
 
 function toggleBox(x){
     if($(x).parent().parent().is($('#yesColumn'))){
@@ -95,7 +111,7 @@ function loadDoc(i) {
     }
   };
    document.getElementById("title").innerHTML = i+2;
-  xhttp.open("GET", "test.txt", true);
+  xhttp.open("GET", "questions.json", true);
   xhttp.send();
     }
 */
